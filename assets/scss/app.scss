@@ -1,0 +1,294 @@
+/**
+ * Frontend stylesheet for Coin Development Property plugin.
+ */
+
+.hide {
+	display: none !important;
+}
+
+$red: #b1103a;
+$blue: #3b90f1;
+$gray: #8c8a8a;
+
+.filter {
+	width: 980px;
+	margin: 0 auto;
+	padding-top: 2rem;
+	
+	$placeholder-color: #9a97f1;
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  	color: $placeholder-color;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  color: $placeholder-color;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	  color: $placeholder-color;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  color: $placeholder-color;
+	}
+
+	[type='number'],
+	[type='text'] {
+    height: 36px;
+		line-height: 36px;
+		margin-bottom: 8px;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		border: 1px solid $blue;
+		font-weight: bold;
+		color: $blue;
+	}
+
+	.button {
+		display: inline-block;
+		margin-bottom: 8px;
+    padding: 0.5rem 1rem;
+    border: 1px solid $blue;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    color: $blue;
+    text-transform: uppercase;
+    text-decoration: none;
+		cursor: pointer;
+		transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		
+		&.active,
+		&:active,
+		&:hover {
+			background-color: $blue;
+			color: white;
+		}
+	}
+
+	.button--search {
+		background-color: $blue;
+		text-align: center;
+		color: white;
+
+		&:active,
+		&:hover {
+			background-color: scale-color($blue, $lightness: -15%);
+		}
+	}
+
+	.button--cancel {
+		color: $red;
+		border-color: $red;
+
+		&:active,
+		&:hover {
+			background-color: scale-color($red, $lightness: -15%);
+		}
+	}
+}
+
+.form {
+	&__header {
+		display: flex;
+	}
+
+	&__group {
+		display: flex;
+		
+		&--search {
+			flex-grow: 1;
+			margin-right: 8px;
+		}
+	
+		label {
+			flex-grow: 1;
+			
+			[type='text'] {
+				width: 100%;
+		    height: 38px;
+				line-height: 38px;
+				box-sizing: border-box;
+	    	border-right: 0;
+			}
+		}	
+
+		.button {
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	    border-left-width: 0;
+		}
+	}
+}
+
+.filter__more {
+	display: none;
+	
+	&.active {
+		display: block;
+	}
+
+	&::after {
+		content: '.';
+		display: block;
+		width: 100%;
+		height: 0;
+		color: transparent;
+		clear: both;
+	}
+}
+
+.filter__block {
+	
+	box-sizing: border-box;
+	float: left;
+	width: 20%;
+	padding-right: 2.5rem;
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+	
+	&--numbers {
+		width: 23.5%;
+	}
+
+	&--sort {
+		width: 13%;
+		padding-right: 0;
+	}
+
+	&__header {
+    margin-bottom: 1rem;
+    padding: 1rem 0 0.5rem;
+    border-bottom: 1px solid $gray;
+		text-transform: uppercase;
+		color: #3a3a3a;
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			margin-bottom: 0.5rem;
+
+			> a {
+				color: $gray;
+				transition: color 0.3s ease-in-out;
+
+				&:active,
+				&:hover {
+					color: scale-color($gray, $lightness: -15%);
+				}
+			}
+		}
+	}
+
+	a.active {
+		font-weight: 700;
+		color: black !important;
+		text-decoration: none;
+
+		&::after {
+			content: '\f335';
+	    font-family: Dashicons;
+	    position: relative;
+	    top: 2px;
+	    margin-left: 0.5rem;
+	    border-radius: 100%;
+	    background: black;
+	    color: white;
+		}
+
+		&--no-click {
+			 pointer-events: none;
+			 cursor: default;
+
+			 &::after {
+			 		content: none;
+			 }
+		}
+	}
+}
+
+.filter__block--numbers {
+	.filter__item {
+		margin-bottom: 2rem;
+		
+		&.active .filter__item__title {
+			font-weight: 700;
+			color: black;
+			cursor: pointer;
+
+			&::after {
+				content: '\f335';
+		    font-family: Dashicons;
+		    position: relative;
+		    top: 2px;
+		    margin-left: 0.5rem;
+		    border-radius: 100%;
+		    background: black;
+		    color: white;
+			}
+		}
+		
+		&__title {
+			font-size: 14px;
+			font-weight: 400;
+			color: $gray;
+		}
+
+		.range-group {
+			display: flex;
+			justify-content: space-between;
+
+			input {
+				width: 40%;
+				margin-bottom: 0;
+				// padding-left: 0.5rem;
+				// padding-right: 0.5rem;
+				border-width: 0;
+		    border-bottom-width: 1px;
+		    background: transparent;
+		    padding: 0;
+			}
+
+			span {
+				align-self: center;
+				height: auto;
+				text-transform: lowercase;
+				color: $gray;
+			}
+		}
+	}
+}
+
+.filter__buttons {
+	text-align: right;
+
+	&::before {
+		content: '.';
+		display: block;
+		width: 100%;
+		height: 0;
+		color: transparent;
+		clear: both;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.filter {
+		width: 100%;
+
+		&__block {
+			width: 100%;
+			padding-right: 0;
+
+			&__header,
+			ul,
+			& .filter__item {
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+}

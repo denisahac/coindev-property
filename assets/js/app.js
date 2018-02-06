@@ -1,3 +1,6 @@
+/**
+ * Frontend script for Coin Development Property plugin.
+ */
 (function($) {
 
 	initComponents();

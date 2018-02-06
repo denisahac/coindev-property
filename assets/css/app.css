@@ -1,0 +1,213 @@
+/**
+ * Frontend stylesheet for Coin Development Property plugin.
+ */
+.hide {
+  display: none !important; }
+
+.filter {
+  width: 980px;
+  margin: 0 auto;
+  padding-top: 2rem; }
+  .filter ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #9a97f1; }
+  .filter ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #9a97f1; }
+  .filter :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #9a97f1; }
+  .filter :-moz-placeholder {
+    /* Firefox 18- */
+    color: #9a97f1; }
+  .filter [type='number'],
+  .filter [type='text'] {
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px solid #3b90f1;
+    font-weight: bold;
+    color: #3b90f1; }
+  .filter .button {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3b90f1;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: white;
+    color: #3b90f1;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; }
+    .filter .button.active, .filter .button:active, .filter .button:hover {
+      background-color: #3b90f1;
+      color: white; }
+  .filter .button--search {
+    background-color: #3b90f1;
+    text-align: center;
+    color: white; }
+    .filter .button--search:active, .filter .button--search:hover {
+      background-color: #1178ee; }
+  .filter .button--cancel {
+    color: #b1103a;
+    border-color: #b1103a; }
+    .filter .button--cancel:active, .filter .button--cancel:hover {
+      background-color: #960e31; }
+
+.form__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .form__group--search {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-right: 8px; }
+  .form__group label {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+    .form__group label [type='text'] {
+      width: 100%;
+      height: 38px;
+      line-height: 38px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      border-right: 0; }
+  .form__group .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-width: 0; }
+
+.filter__more {
+  display: none; }
+  .filter__more.active {
+    display: block; }
+  .filter__more::after {
+    content: '.';
+    display: block;
+    width: 100%;
+    height: 0;
+    color: transparent;
+    clear: both; }
+
+.filter__block {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  width: 20%;
+  padding-right: 2.5rem; }
+  .filter__block:last-of-type {
+    padding-right: 0; }
+  .filter__block--numbers {
+    width: 23.5%; }
+  .filter__block--sort {
+    width: 13%;
+    padding-right: 0; }
+  .filter__block__header {
+    margin-bottom: 1rem;
+    padding: 1rem 0 0.5rem;
+    border-bottom: 1px solid #8c8a8a;
+    text-transform: uppercase;
+    color: #3a3a3a; }
+  .filter__block ul {
+    list-style: none; }
+    .filter__block ul li {
+      margin-bottom: 0.5rem; }
+      .filter__block ul li > a {
+        color: #8c8a8a;
+        -webkit-transition: color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out; }
+        .filter__block ul li > a:active, .filter__block ul li > a:hover {
+          color: #777575; }
+  .filter__block a.active {
+    font-weight: 700;
+    color: black !important;
+    text-decoration: none; }
+    .filter__block a.active::after {
+      content: '\f335';
+      font-family: Dashicons;
+      position: relative;
+      top: 2px;
+      margin-left: 0.5rem;
+      border-radius: 100%;
+      background: black;
+      color: white; }
+    .filter__block a.active--no-click {
+      pointer-events: none;
+      cursor: default; }
+      .filter__block a.active--no-click::after {
+        content: none; }
+
+.filter__block--numbers .filter__item {
+  margin-bottom: 2rem; }
+  .filter__block--numbers .filter__item.active .filter__item__title {
+    font-weight: 700;
+    color: black;
+    cursor: pointer; }
+    .filter__block--numbers .filter__item.active .filter__item__title::after {
+      content: '\f335';
+      font-family: Dashicons;
+      position: relative;
+      top: 2px;
+      margin-left: 0.5rem;
+      border-radius: 100%;
+      background: black;
+      color: white; }
+  .filter__block--numbers .filter__item__title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8c8a8a; }
+  .filter__block--numbers .filter__item .range-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .filter__block--numbers .filter__item .range-group input {
+      width: 40%;
+      margin-bottom: 0;
+      border-width: 0;
+      border-bottom-width: 1px;
+      background: transparent;
+      padding: 0; }
+    .filter__block--numbers .filter__item .range-group span {
+      -ms-flex-item-align: center;
+          align-self: center;
+      height: auto;
+      text-transform: lowercase;
+      color: #8c8a8a; }
+
+.filter__buttons {
+  text-align: right; }
+  .filter__buttons::before {
+    content: '.';
+    display: block;
+    width: 100%;
+    height: 0;
+    color: transparent;
+    clear: both; }
+
+@media screen and (max-width: 767px) {
+  .filter {
+    width: 100%; }
+    .filter__block {
+      width: 100%;
+      padding-right: 0; }
+      .filter__block__header,
+      .filter__block ul,
+      .filter__block .filter__item {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
